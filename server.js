@@ -199,13 +199,13 @@ app.put('/addContact', function(req, res){
 
 
 
-var server = http.listen(8080, function(){
+var server = http.listen(80, function(){
 	
 	var port = server.address().port
 	console.log("Server Running in http://127.0.0.1:"+port)
 	console.log("Base dir: "+__dirname)
 })
 
-var s = https.createServer(options, app).listen(4143, function(){
+var s = https.createServer(options, app).listen(443, function(){
 	console.log("Secure conction Established - HTTPS - SSL")
 })
