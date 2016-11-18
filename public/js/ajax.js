@@ -1,4 +1,4 @@
-var baseURL = "http://"+document.domain+":443"
+var baseURL = "https://"+document.domain+":443"
 function getNewXHRObject(){
   var xhr
   if (window.XMLHttpRequest) {
