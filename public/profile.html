@@ -4,15 +4,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 	<link rel="stylesheet" type="text/css" href="css/FBchat.css">
 	<link rel="stylesheet" type="text/css" href="css/profileImage.css">
+	<style type="text/css">
+	#profileImg:hover { 
+  	  background-color: yellow;
+	}
+	</style>
 </head>
 <body>
 	<header style="height:120px;"><!--<img src="images/logo.png">-->
-		<div class="square"><img src="images/wood.jpg"></div>
+		<div id="profileImg" class="square"><img src="images/wood.jpg"></div>
 		<a style="float:right;text-decoration:none;" href="/endSession"><button style="background-color:cyan;">log out</button></a>
 		 <a href="/">Inicio</a>
 	</header>
 	<div id="content">
-		<input type="upload">
 		<form method='post' action='upload' enctype="multipart/form-data">
 		<div onclick="uploadInput.click()" class="circular2" style="margin: 0 0 0 -12px;"><img src="images/wood.jpg"/></div>
 		<input hidden type="file" id="uploadInput" name="pic" accept="image/*" onchange="loadFile(event)">
@@ -22,13 +26,15 @@
 		<div class="col-12">
 			<img id="output"/>	
 			<br>
-			<div onclick="rotateRight()">-></div>
+			<button onclick="rotateRight()">-></button>
 		</div>
 	</div>
 	</div>
 	<footer></footer>
 	<script>
+	document.getElementById("profileImg").addEventListener("mouseover", function(){
 
+	});
 
 	/**  Creates a style.css file and writes a class inside **/
 	/*
