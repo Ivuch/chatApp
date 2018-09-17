@@ -8,6 +8,8 @@ var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')//<---- Necesito realmente esto?
 var session = require('express-session')
 var mongoose = require('mongoose')
+var multer  = require('multer')
+var upload = multer({ dest: 'tmp/' })
 
 var server = http.listen(80, function(){
 	
@@ -129,6 +131,14 @@ app.post('/login', function(req, res){
 		}
 	})
 })
+
+app.post('/upload', upload.single('pic'), function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+  console.log("req.file: "+req.file)
+  console.log(req.file)
+  res.json({upload: "OK"})
+})
 /*
 {https://www.youtube.com/watch?v=3-xJki_OVYg}}
 */
@@ -143,6 +153,9 @@ app.get('/text', function(req, res){
 	})
 })
 
+app.get('/profile', function(req, res){
+	res.sendFile(__dirname+"/profile.html")
+})
 
 app.get('/session', function(req, res){
 	User.find({ _id: req.session.userID }, function(err, user) {
