@@ -3,8 +3,70 @@
 	<title>login</title>
 	<link rel="stylesheet" type="text/css" href="css/FBchat.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<style>
+		#modal{
+	position: fixed;
+	width:100%;
+	height:100%;
+	background-color: gray;
+	float:left;
+	z-index: 1;
+	/*visibility: hidden;*/
+	-webkit-transition-property: width, visibility; /* Safari */
+    -webkit-transition-duration: 0.5s; /* Safari */
+	transition-property: width, visibility;
+    transition-duration: 0.5s;
+}
+#modalHead{
+	height: 55px;
+	padding-left: 4px;
+	background: black url(/images2/logoW.png) no-repeat;
+	background-position: 10%; 
+	background-size: 53% 36%;
+	-webkit-box-shadow: 0px 3px 9px 1px white;
+	-moz-box-shadow: 0px 3px 9px 1px white;
+	box-shadow: 0px 3px 9px 1px white;
+}
+.modalHeaderTitle{
+	color: white;
+	left: 42%;
+	top: 18%;
+	position: relative;
+	font-size: xx-large;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#modalBody{
+	position: relative;
+	left: 39%;
+	top: 30%;
+	font-size: xxx-large;
+}
+
+	</style>
 </head>
-<body>
+<body>	
+	<div id="modal">
+		<div id="modalHead">
+			<span class="modalHeaderTitle">Welcome</span>
+			<span onclick="closeMsgModal()" class="close">x</span>
+		</div>
+		<div id="modalBody">
+			<span style="display: block; font-family: fantasy;">Web del Bosque!</span>
+			<span style="font-size: xx-large; color:rebeccapurple;left: 4%;position: relative;">Site on Building</span>
+		</div>
+	</div>
 	<header>
 		<form onsubmit="login();return false" id="loginForm">
 			<table>
