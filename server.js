@@ -20,8 +20,9 @@ var server = http.listen(80, function(){
 
 var options = {
 	key: fs.readFileSync('keys/key.pem'),
-  	cert: fs.readFileSync('keys/cert.pem')
+  	cert: fs.readFileSync('keys/fullchain.pem')
 }
+
 
 var s = https.createServer(options, app).listen(443, function(){
 	console.log("Secure conction Established - HTTPS - SSL")
