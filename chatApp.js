@@ -11,7 +11,7 @@ var mongoose = require('mongoose')
 var multer  = require('multer')
 var upload = multer({ dest: 'tmp/' })
 
-var server = http.listen(8080, function(){
+var server = http.listen(80, function(){
 	
 	var port = server.address().port
 	console.log("Server Running in http://127.0.0.1:"+port)
@@ -20,10 +20,10 @@ var server = http.listen(8080, function(){
 
 var options = {
 	key: fs.readFileSync('keys/key.pem'),
-  	cert: fs.readFileSync('keys/cert.pem')
+  	cert: fs.readFileSync('keys/fullchain.pem')
 }
 
-var s = https.createServer(options, app).listen(4443, function(){
+var s = https.createServer(options, app).listen(443, function(){
 	console.log("Secure conction Established - HTTPS - SSL")
 })
 var io = require('socket.io')(s)
